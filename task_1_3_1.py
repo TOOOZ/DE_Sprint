@@ -12,7 +12,7 @@ data = {
         }
 
 
-for page in range(1,40):
+for page in range(7,40):
     url = f"https://ulan-ude.hh.ru/search/vacancy?area=113&search_field=name&search_field=company_name&search_field=description&text=python+разработчик&from=suggest_post&page=0&hhtmFrom=vacancy_search_list"
     resp = req.get(url);
     
