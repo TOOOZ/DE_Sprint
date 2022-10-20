@@ -12,14 +12,14 @@ data = {
         }
 
 
-for page in range(7,40):
-    url = f"https://ulan-ude.hh.ru/search/vacancy?area=113&search_field=name&search_field=company_name&search_field=description&text=python+разработчик&from=suggest_post&page=0&hhtmFrom=vacancy_search_list"
+for page in range(1,40):
+    url = f"https://ulan-ude.hh.ru/search/vacancy?area=113&search_field=name&search_field=company_name&search_field=description&text=python+разработчик&from=suggest_post&page={page}&hhtmFrom=vacancy_search_list"
     resp = req.get(url);
     
     soup = BeautifulSoup(resp.text, 'lxml')
     tags = soup.find_all(attrs={'data-qa':'serp-item__title'});
     for iter in tqdm.tqdm(tags):
-        #time.sleep(2);
+        time.sleep(2);
         url_object = iter.attrs["href"]
         resp_object =req.get(url_object);
         

@@ -1,4 +1,4 @@
-bnum = 1648;
+num = 1648;
 
 nums = [];
 nums.append(num//1000);
